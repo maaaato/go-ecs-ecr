@@ -59,9 +59,8 @@ make_task_def(){
 }
 
 push_ecr_image(){
-#	eval $(aws ecr get-login --region ap-northeast-1 --no-include-email)
-	eval $(aws ecr get-login --region ap-northeast-1)    
-	#docker push $AWS_ACCOUNT_ID.dkr.ecr.ap-northeast-1.amazonaws.com/go-sample-webapp:$CIRCLE_SHA1
+	eval $(aws ecr get-login --region ap-northeast-1)
+    docker push $AWS_ACCOUNT_ID.dkr.ecr.ap-northeast-1.amazonaws.com/go-sample-webapp:$CIRCLE_SHA1
 }
 
 register_definition() {
@@ -77,4 +76,4 @@ register_definition() {
 
 configure_aws_cli
 push_ecr_image
-#deploy_cluster
+deploy_cluster
