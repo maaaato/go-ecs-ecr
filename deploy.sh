@@ -5,8 +5,8 @@ JQ="jq --raw-output --exit-status"
 
 configure_aws_cli(){
 	aws --version
-#	aws configure set default.region ap-northeast-1
-#	aws configure set default.output json
+	aws configure set default.region ap-northeast-1
+	aws configure set default.output json
 }
 
 deploy_cluster() {
@@ -74,6 +74,6 @@ register_definition() {
 
 }
 
-configure_aws_cli
+#configure_aws_cli
 push_ecr_image
 deploy_cluster
